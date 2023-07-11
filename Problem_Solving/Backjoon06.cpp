@@ -323,3 +323,73 @@
 //
 //	std::cout << count << '\n';
 //}
+
+/* --- < 1316 > --- */
+
+/*
+< 문제 >
+	그룹 단어란 단어에 존재하는 모든 문자에 대해서,
+	각 문자가 연속해서 나타나는 경우만을 말한다.
+
+	예를 들면, ccazzzzbb는 c, a, z, b가 모두 연속해서 나타나고,
+	kin도 k, i, n이 연속해서 나타나기 때문에 그룹 단어이지만,
+	aabbbccb는 b가 떨어져서 나타나기 때문에 그룹 단어가 아니다.
+
+	단어 N개를 입력으로 받아 그룹 단어의 개수를 출력하는 프로그램을 작성하시오.
+
+< 입력 >
+	첫째 줄에 단어의 개수 N이 들어온다.
+	N은 100보다 작거나 같은 자연수이다.
+	둘째 줄부터 N개의 줄에 단어가 들어온다.
+	단어는 알파벳 소문자로만 되어있고 중복되지 않으며, 길이는 최대 100이다.
+
+< 출력 >
+	첫째 줄에 그룹 단어의 개수를 출력한다.
+*/
+
+//#include <iostream>
+//#include <string>
+//#include <cstring>
+//
+//// 그룹 단어인지 아닌지 확인하는 함수
+//bool GroupWord(const std::string& word)
+//{
+//	// 1. 인덱스를 스펠링으로 가정하고 등장 한 적이 있는지 체크한다.
+//	bool en[26]{ false };
+//
+//	// 2. 매개변수로 전달받은 문장을 순회 한다.
+//	for (int i = 0; i < word.length(); i++)
+//	{	// 3. 아스키 코드로 변환하여 스펠링의 인덱스를 구한다.
+//		int index = word[i] - 'a';
+//		// 4. 이미 등장한 적이 있으면서 동시에 바로 이전의 스펠링과 현재 스펠링이 다를 경우 이 문장은 그룹 단어가 아니다.
+//		if (en[index] && word[i - 1] != word[i]) return false;
+//		// 5. 아니라면 스펠링이 처음 등장 했음을 표시한다.
+//		en[index] = true;
+//	}
+//	// 6. 무사히 반복문을 탈출 했다면 이 단어는 그룹 단어이다.
+//	return true;
+//}
+//// 그룹 단어의 개수를 세는 함수
+//int CountGroup(int n)
+//{
+//	int count{};
+//	// 1. 입력 받은 n 만큼 단어를 입력하면서 그룹 단어인지 확인
+//	for (int i = 0; i < n; i++)
+//	{
+//		std::string word;
+//		std::cin >> word;
+//
+//		if (GroupWord(word)) count++;
+//	}
+//
+//	return count;
+//}
+//
+//int main()
+//{
+//	int N;
+//	std::cin >> N;
+//
+//	int result = CountGroup(N);
+//	std::cout << result << '\n';
+//}
