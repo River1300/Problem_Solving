@@ -440,3 +440,173 @@
 //		}
 //	}
 //}
+
+/* --- < 1269 > --- */
+
+/*
+< 문제 >
+	자연수를 원소로 갖는 공집합이 아닌 두 집합 A와 B가 있다.
+	이때, 두 집합의 대칭 차집합의 원소의 개수를 출력하는 프로그램을 작성하시오.
+	두 집합 A와 B가 있을 때, (A-B)와 (B-A)의 합집합을 A와 B의 대칭 차집합이라고 한다.
+
+	예를 들어, A = { 1, 2, 4 } 이고, B = { 2, 3, 4, 5, 6 } 라고 할 때,
+	A-B = { 1 } 이고, B-A = { 3, 5, 6 } 이므로,
+	대칭 차집합의 원소의 개수는 1 + 3 = 4개이다.
+
+< 입력 >
+	첫째 줄에 집합 A의 원소의 개수와 집합 B의 원소의 개수가 빈 칸을 사이에 두고 주어진다.
+	둘째 줄에는 집합 A의 모든 원소가,
+	셋째 줄에는 집합 B의 모든 원소가 빈 칸을 사이에 두고 각각 주어진다.
+	각 집합의 원소의 개수는 200,000을 넘지 않으며, 모든 원소의 값은 100,000,000을 넘지 않는다.
+
+< 출력 >
+	첫째 줄에 대칭 차집합의 원소의 개수를 출력한다.
+*/
+
+//#include <iostream>
+//#include <map>
+//
+//int main()
+//{
+//	int count{};
+//	int Asize, Bsize;
+//	std::cin >> Asize >> Bsize;
+//
+//	std::map<int, int> AB;
+//
+//	for (int i = 0; i < Asize + Bsize; i++)
+//	{
+//		int num;
+//		std::cin >> num;
+//		AB[num]++;
+//	}
+//
+//	for (int i = 0; i < AB.size(); i++)
+//	{
+//		if (AB[i] != 2) count++;
+//	}
+//
+//	std::cout << count << '\n';
+//}
+
+//#include <iostream>
+//#include <set>
+//
+//int main()
+//{
+//	int diff{};
+//	int Asize, Bsize;
+//	std::cin >> Asize >> Bsize;
+//
+//	std::set<int> A, B;
+//
+//	for (int i = 0; i < Asize; i++)
+//	{
+//		int num;
+//		std::cin >> num;
+//		A.insert(num);
+//	}
+//	for (int i = 0; i < Bsize; i++)
+//	{
+//		int num;
+//		std::cin >> num;
+//		B.insert(num);
+//	}
+//
+//	for (int e : A)
+//	{
+//		if (B.find(e) == B.end()) diff++;
+//	}
+//	for (int e : B)
+//	{
+//		if (A.find(e) == A.end()) diff++;
+//	}
+//
+//	std::cout << diff << '\n';
+//}
+
+//#include <iostream>
+//#include <map>
+//
+//int main()
+//{
+//	int Asize, Bsize;
+//	std::cin >> Asize >> Bsize;
+//
+//	std::map<int, int> AB;
+//
+//	for (int i = 0; i < Asize + Bsize; i++)
+//	{
+//		int num;
+//		std::cin >> num;
+//		(AB[num]) ? AB.erase(num) : AB[num] = 1;
+//	}
+//
+//	std::cout << AB.size() << '\n';
+//}
+
+/* --- < 11478 > --- */
+
+/*
+< 문제 >
+	문자열 S가 주어졌을 때, S의 서로 다른 부분 문자열의 개수를 구하는 프로그램을 작성하시오.
+
+	부분 문자열은 S에서 연속된 일부분을 말하며, 길이가 1보다 크거나 같아야 한다.
+
+	예를 들어, ababc의 부분 문자열은
+	a, b, a, b, c, ab, ba, ab, bc, aba, bab, abc, abab, babc, ababc가 있고, 서로 다른것의 개수는 12개이다.
+
+< 입력 >
+	첫째 줄에 문자열 S가 주어진다. S는 알파벳 소문자로만 이루어져 있고, 길이는 1,000 이하이다.
+
+< 출력 >
+	첫째 줄에 S의 서로 다른 부분 문자열의 개수를 출력한다.
+*/
+
+//#include <iostream>
+//#include <string>
+//#include <set>
+//
+//int main()
+//{
+//	std::string input;
+//	std::cin >> input;
+//
+//	std::set<std::string> substrings;
+//
+//	for (int i = 0; i < input.size(); i++)
+//	{
+//		std::string substring{};
+//
+//		for (int j = i; j < input.size(); j++)
+//		{
+//			substring += input[j];
+//			substrings.insert(substring);
+//		}
+//	}
+//
+//	std::cout << substrings.size() << '\n';
+//}
+
+//#include <iostream>
+//#include <unordered_map>
+//
+//int main()
+//{
+//	std::string S;
+//	std::cin >> S;
+//
+//	std::unordered_map<std::string, int> MP;
+//	std::string temp;
+//
+//	for (int i = 0; i < S.size(); i++)
+//	{
+//		for (int j = 1; j <= S.size(); j++)
+//		{
+//			temp = S.substr(i, j);
+//			MP[temp]++;
+//		}
+//	}
+//
+//	std::cout << MP.size() << '\n';
+//}
