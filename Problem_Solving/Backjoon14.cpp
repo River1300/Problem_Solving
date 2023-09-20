@@ -91,3 +91,85 @@
 //
 //	std::cout << max * min << '\n';
 //}
+
+/* --- < 2609 > --- */
+
+/*
+< 문제 >
+	두 개의 자연수를 입력받아 최대 공약수와 최소 공배수를 출력하는 프로그램을 작성하시오.
+
+< 입력 >
+	첫째 줄에는 두 개의 자연수가 주어진다.
+	이 둘은 10,000이하의 자연수이며 사이에 한 칸의 공백이 주어진다.
+
+< 출력 >
+	첫째 줄에는 입력으로 주어진 두 수의 최대공약수를,
+	둘째 줄에는 입력으로 주어진 두 수의 최소 공배수를 출력한다.
+
+< 풀이 >
+	#include <numeric>
+	std::gcd();	// 최대 공약수
+	std::lcm();	// 최소 공배수
+
+	num1(60) % num2(48) = result(12)
+	num1(48) % num2(12) = result(0)
+	num1(12) % num2(0) -> return num1(12);
+
+	num1(60) X num2(48) = result(2880)
+	result(2880) / gcd(12) = 240;
+*/
+
+//#include <iostream>
+//
+//int DevideNum(int num1, int num2)
+//{
+//	return num2 ? DevideNum(num2, (num1 % num2) : num1);
+//}
+//
+//int main()
+//{
+//	int num1, num2;
+//	std::cin >> num1 >> num2;
+//
+//	std::cout << DevideNum(num1, num2) << '\n';
+//	std::cout << num1 * num2 / DevideNum(num1, num2) << '\n';
+//}
+
+/* --- < 1934 > --- */
+
+/*
+< 문제 >
+	두 자연수 A와 B에 대해서, A의 배수이면서 B의 배수인 자연수를 A와 B의 공배수라고 한다.
+	이런 공배수 중에서 가장 작은 수를 최소공배수라고 한다.
+	예를 들어, 6과 15의 공배수는 30, 60, 90등이 있으며, 최소 공배수는 30이다.
+
+	두 자연수 A와 B가 주어졌을 때, A와 B의 최소공배수를 구하는 프로그램을 작성하시오.
+
+< 입력 >
+	첫째 줄에 테스트 케이스의 개수 T(1 ≤ T ≤ 1,000)가 주어진다.
+	둘째 줄부터 T개의 줄에 걸쳐서 A와 B가 주어진다. (1 ≤ A, B ≤ 45,000)
+
+< 출력 >
+	첫째 줄부터 T개의 줄에 A와 B의 최소공배수를 입력받은 순서대로 한 줄에 하나씩 출력한다.
+*/
+
+//#include <iostream>
+//
+//int GCD(int a, int b)
+//{
+//	return b ? GCD(b, a % b) : a;
+//}
+//
+//int main()
+//{
+//	int T;
+//	std::cin >> T;
+//
+//	for (int i = 0; i < T; i++)
+//	{
+//		int A, B;
+//		std::cin >> A >> B;
+//
+//		std::cout << A * B / GCD(A, B) << '\n';
+//	}
+//}
