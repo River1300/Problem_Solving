@@ -360,3 +360,74 @@
 //
 //	std::cout << Factorial(N) / (Factorial(K) * Factorial(N - K)) << '\n';
 //}
+
+/* --- < 11051 > --- */
+
+/*
+< 문제 >
+	자연수(N)과 정수(K)가 주어졌을 때 이항 계수
+	({N}{K})를 10,007로 나눈 나머지를 구하는 프로그램을 작성하시오.
+
+< 입력 >
+	첫째 줄에 (N)과 (K)가 주어진다. (1 ≤ (N) ≤ 1,000, 0 ≤ (K) ≤ (N)
+
+< 출력 >
+	({N}{K})를 10,007로 나눈 나머지를 출력한다.
+
+< 풀이 >
+	0 <= k <= n이라는 식을 만족할 때 이항계수는 nCk라는 값을 가지고 이러한 식의 값을 나열 했을 때
+	나오는 표가 삼각형을 이루는데 이러한 삼각형을 파스칼 삼각형이라고 부른다.
+*/
+
+//#include <iostream>
+//#include <vector>
+//
+//int main()
+//{
+//	int n, k;
+//	std::cin >> n >> k;
+//
+//	std::vector<std::vector<int>> dp(n + 1, std::vector<int>(n + 1, 0));
+//
+//	for (int i = 0; i <= n; i++)
+//	{
+//		dp[i][0] = 1;
+//		dp[i][i] = 1;
+//	}
+//
+//	for (int i = 2; i <= n; i++)
+//	{
+//		for (int j = 1; j < i; j++)
+//		{
+//			dp[i][j] = (dp[i - 1][j - 1] + dp[i - 1][j]) % 10007;
+//		}
+//	}
+//
+//	std::cout << dp[n][k] << '\n';
+//}
+
+//#include <iostream>
+//
+//int block[1001][1001];
+//
+//int main()
+//{
+//	int N, K;
+//	std::cin >> N >> K;
+//
+//	for (int i = 1; i <= N; i++)
+//	{
+//		for (int j = 0; j <= N; j++) 
+//		{
+//			if (i == j || j == 0) 
+//			{
+//				block[i][j] = 1;
+//			}
+//			else 
+//			{
+//				block[i][j] = (block[i - 1][j] + block[i - 1][j - 1]) % 10007;
+//			}
+//		}
+//	}
+//	std::cout << block[N][K];
+//}
