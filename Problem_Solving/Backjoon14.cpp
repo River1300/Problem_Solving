@@ -519,3 +519,97 @@
 //		std::cout << link << '\n';
 //	}
 //}
+
+/* --- < 9375 > --- */
+
+/*
+< 문제 >
+	해빈이는 패션에 매우 민감해서 한번 입었던 옷들의 조합을 절대 다시 입지 않는다.
+	예를 들어 오늘 해빈이가 안경, 코트, 상의, 신발을 입었다면,
+	다음날은 바지를 추가로 입거나 안경대신 렌즈를 착용하거나 해야한다.
+	해빈이가 가진 의상들이 주어졌을때 과연 해빈이는 알몸이 아닌 상태로
+	며칠동안 밖에 돌아다닐 수 있을까?
+
+< 입력 >
+	첫째 줄에 테스트 케이스가 주어진다. 테스트 케이스는 최대 100이다.
+
+	각 테스트 케이스의 첫째 줄에는 해빈이가 가진 의상의 수 n(0 ≤ n ≤ 30)이 주어진다.
+	다음 n개에는 해빈이가 가진 의상의 이름과 의상의 종류가 공백으로 구분되어 주어진다.
+	같은 종류의 의상은 하나만 입을 수 있다.
+	모든 문자열은 1이상 20이하의 알파벳 소문자로 이루어져있으며
+	같은 이름을 가진 의상은 존재하지 않는다.
+
+< 출력 >
+	각 테스트 케이스에 대해 해빈이가 알몸이 아닌 상태로 의상을 입을 수 있는 경우를 출력하시오.
+
+< 풀이 >
+	map을 활용해서 의상의 종류에 해당 하는 옷 이름이 각각 몇개인지 구한다.
+	그 후, map 전체를 순회하며 second에 1을 더한 숫자를 곱해서 해빈이가 가진 옷들로 만들 수
+	있는 총 조합의 수를 구한다.	1을 더한 이유는 해당 옷을 입지 않는 경우도 있기 때문이다.
+	마지막에 1을 빼줘야 하는데, 이는 모든 종류의 옷을 입지 않는 경우를 제외해 주어야 하기 때문이다.
+*/
+
+//#include <iostream>
+//#include <unordered_map>
+//
+//int main() {
+//	int T;
+//	std::cin >> T;
+//
+//	while (T--) 
+//	{
+//		int n;
+//		std::cin >> n;
+//
+//		std::unordered_map<std::string, int> clothes;
+//
+//		for (int i = 0; i < n; i++) {
+//			std::string name, type;
+//			std::cin >> name >> type;
+//			clothes[type]++;
+//		}
+//
+//		int total = 1;
+//
+//		for (auto itr = clothes.begin(); itr != clothes.end(); itr++) {
+//			total *= (itr->second + 1);
+//		}
+//
+//		std::cout << total - 1 << std::endl;
+//	}
+//}
+
+//#include <iostream>
+//#include <unordered_map>
+//
+//using int_cloth = std::unordered_map<std::string, int>;
+//
+//int main()
+//{
+//	int T;
+//	std::cin >> T;
+//
+//	std::string type, name;
+//
+//	for (int i = 0; i < T; i++)
+//	{
+//		int N;
+//		std::cin >> N;
+//
+//		int_cloth cloth{};
+//
+//		for (int j = 0; j < N; j++)
+//		{
+//			std::cin >> name >> type;
+//			cloth[type]++;
+//		}
+//
+//		int result{ 1 };
+//		for (auto e : cloth)
+//		{
+//			result *= (e.second + 1);
+//		}
+//		result -= 1;
+//		std::cout << result << '\n';
+//	}
+//}
